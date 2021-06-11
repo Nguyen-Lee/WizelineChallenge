@@ -8,11 +8,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
+    protected WebDriver driver;
     protected static final Logger logger = LogManager.getLogger(DriverFactory.class);
     protected static WaitUtils waitUtils;
 
-    protected BasePage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        waitUtils = new WaitUtils(driver);
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(this.driver, this);
+        waitUtils = new WaitUtils(this.driver);
     }
 }

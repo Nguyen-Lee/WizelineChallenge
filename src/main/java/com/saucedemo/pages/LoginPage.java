@@ -1,11 +1,12 @@
 package com.saucedemo.pages;
 
-import com.saucedemo.pages.BasePage;
 import commonLibs.ElementControl;
+import commonLibs.utils.ConfigUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class LoginPage extends BasePage {
     @CacheLookup
@@ -20,18 +21,30 @@ public class LoginPage extends BasePage {
     @FindBy(id="login-button")
     private WebElement loginButtonEle;
 
+    @CacheLookup
+    @FindBy(xpath = "//h3[@data-test='error']")
+    private WebElement errorMessage;
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    public void login(String username, String password) {
+    public LoginPage login(String username, String password) {
         logger.info(String.format("Login with username %s, password: %s", username, password));
         ElementControl.inputText(usernameEle, username);
         ElementControl.inputText(passwordEle, password);
         loginButtonEle.click();
+        return this;
     }
 
-    public void verifyLoginFailed(String errorCode) {
+    public void verifyFailedAuthentication(String expectedMessage) {
+        waitUtils.waitForElement(errorMessage, ConfigUtils.getShortTimeoutSecond());
+        Assert.assertEquals(errorMessage.getText(), expectedMessage, "Different errror messsage");
+    }
 
+    public ProductPage verifySuccessfulAuthentication(String expectedUrl, long timeout) {
+        waitUtils.waitForPageLoad(timeout);
+        Assert.assertEquals(this.driver.getCurrentUrl(), expectedUrl);
+        return new ProductPage(driver);
     }
 }

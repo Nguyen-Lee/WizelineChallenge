@@ -10,6 +10,10 @@ public class ConfigUtils {
         return dotenv.get(CommonParams.BASE_URL.name());
     }
 
+    public static String getProductPage() {
+        return dotenv.get(CommonParams.PRODUCT_PAGE.name());
+    }
+
     public static String getTestingBrowser() {
         return dotenv.get(CommonParams.TESTING_BROWSER.name());
     }

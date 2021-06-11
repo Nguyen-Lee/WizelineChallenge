@@ -2,6 +2,7 @@ package com.saucedemo.test;
 
 import com.saucedemo.pages.LoginPage;
 import com.saucedemo.common.ErrorMessages;
+import com.saucedemo.pages.ProductPage;
 import commonLibs.utils.ConfigUtils;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -77,9 +78,9 @@ public class LoginTest extends BaseTestCase {
             dataProvider = "validCredentials",
             dependsOnMethods = "lockedCredentialFailsLogin")
     public void validCredentialLogin(String username, String password) {
-        loginPage = loginPage.login(username, password)
-                    .verifySuccessfulAuthentication(ConfigUtils.getBaseUrl() + ConfigUtils.getProductPage(), ConfigUtils.getDefaultTimeoutSecond())
-                    .logout();
+        ProductPage productPage = loginPage.login(username, password)
+                    .verifySuccessfulAuthentication(ConfigUtils.getBaseUrl() + ConfigUtils.getProductPage(), ConfigUtils.getDefaultTimeoutSecond());
+        loginPage = productPage.getHeader().showMainMenu().logout().verifyLogoutSuccessfully();
         pauseBetweenTest();
     }
 

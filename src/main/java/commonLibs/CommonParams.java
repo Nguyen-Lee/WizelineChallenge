@@ -2,7 +2,8 @@ package commonLibs;
 
 public enum CommonParams {
     BASE_URL,
-    PRODUCT_PAGE,
+    LOGIN_NAME,
+    PASSWORD,
     TESTING_BROWSER,
     SHORT_TIMEOUT_SECONDS,
     DEFAULT_TIMEOUT_SECONDS,

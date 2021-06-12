@@ -10,8 +10,12 @@ public class ConfigUtils {
         return dotenv.get(CommonParams.BASE_URL.name());
     }
 
-    public static String getProductPage() {
-        return dotenv.get(CommonParams.PRODUCT_PAGE.name());
+    public static String getLoginName() {
+        return dotenv.get(CommonParams.LOGIN_NAME.name());
+    }
+
+    public static String getPassword() {
+        return dotenv.get(CommonParams.PASSWORD.name());
     }
 
     public static String getTestingBrowser() {

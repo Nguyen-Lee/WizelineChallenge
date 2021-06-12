@@ -45,7 +45,7 @@ public class MainMenuCom extends BasePage {
 
     public LoginPage verifyLogoutSuccessfully() {
         waitUtils.waitForPageLoad(ConfigUtils.getDefaultTimeoutSecond());
-        Assert.assertEquals(ConfigUtils.getBaseUrl(), driver.getCurrentUrl(), "Redirect to incorrect page");
+        Assert.assertEquals(driver.getCurrentUrl(), ConfigUtils.getBaseUrl(), "After logout, it doesn't redirect to home page");
         return new LoginPage(driver);
     }
 }

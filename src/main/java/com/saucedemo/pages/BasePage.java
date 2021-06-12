@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
     protected WebDriver driver;
-    protected static final Logger logger = LogManager.getLogger(DriverFactory.class);
+    protected static final Logger logger = LogManager.getLogger(BasePage.class);
     protected static WaitUtils waitUtils;
 
     public BasePage(WebDriver driver) {

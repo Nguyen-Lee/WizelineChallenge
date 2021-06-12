@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WaitUtils {
     private static WebDriver driver;
     private static WebDriverWait wait;
-    private static final Logger logger = LogManager.getLogger(DriverFactory.class);
+    private static final Logger logger = LogManager.getLogger(WaitUtils.class);
 
     public WaitUtils(WebDriver driver) {
         WaitUtils.driver = driver;

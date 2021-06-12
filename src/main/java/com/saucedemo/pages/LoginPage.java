@@ -39,12 +39,12 @@ public class LoginPage extends BasePage {
 
     public void verifyFailedAuthentication(String expectedMessage) {
         waitUtils.waitForElement(errorMessage, ConfigUtils.getShortTimeoutSecond());
-        Assert.assertEquals(errorMessage.getText(), expectedMessage, "Different errror messsage");
+        Assert.assertEquals(errorMessage.getText(), expectedMessage, "Failed authentication with different error");
     }
 
     public ProductPage verifySuccessfulAuthentication(String expectedUrl, long timeout) {
         waitUtils.waitForPageLoad(timeout);
-        Assert.assertEquals(this.driver.getCurrentUrl(), expectedUrl);
+        Assert.assertEquals(this.driver.getCurrentUrl(), expectedUrl, "Failed authentication");
         return new ProductPage(driver);
     }
 }

@@ -9,10 +9,6 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.Optional;
-
-import javax.annotation.Nullable;
-import java.io.ObjectInputFilter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,6 +26,12 @@ public class ProductPage extends BasePage {
     @FindBy(className = "inventory_list")
     WebElement inventoryList;
 
+    @FindBy(className = "inventory_item_name")
+    List<WebElement> productNames;
+
+    @FindBy(className = "inventory_item_price")
+    List<WebElement> productPrices;
+
     public ProductPage(WebDriver driver) {
         super(driver);
         header = new HeaderCom(driver);
@@ -43,8 +45,9 @@ public class ProductPage extends BasePage {
     }
 
     private void verifySortByName(boolean isAZ) {
-        List<WebElement> priceList = driver.findElements(By.className("inventory_item_name"));
-        List<String> originalList = priceList.stream().map(s -> s.getText()).collect(Collectors.toList());
+        List<String> originalList = productNames.stream()
+                                    .map(s -> s.getText())
+                                    .collect(Collectors.toList());
         logger.info("Original list: " + originalList);
 
         List<String> sortedList;
@@ -52,7 +55,7 @@ public class ProductPage extends BasePage {
                         ? originalList.stream().sorted().collect(Collectors.toList())
                         : originalList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         logger.info("Sorted list: " + sortedList);
-        Assert.assertTrue(originalList.equals(sortedList));
+        Assert.assertTrue(originalList.equals(sortedList), "Failed verification sort product by name");
     }
 
     public void verifySortByAZName() {
@@ -66,15 +69,16 @@ public class ProductPage extends BasePage {
     }
 
     private void verifySortByPrice(boolean isAsc) {
-        List<WebElement> priceList = driver.findElements(By.className("inventory_item_price"));
-        List<Double> originalList = priceList.stream().map(s -> Double.parseDouble(s.getText().replace("$", ""))).collect(Collectors.toList());
+        List<Double> originalList = productPrices.stream()
+                                    .map(s -> Double.parseDouble(s.getText().replace("$", "")))
+                                    .collect(Collectors.toList());
         logger.info("Original list: " + originalList);
         List<Double> sortedList;
         sortedList = isAsc
                         ? originalList.stream().sorted().collect(Collectors.toList())
                         : originalList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         logger.info("Sorted list: " + sortedList);
-        Assert.assertTrue(originalList.equals(sortedList));
+        Assert.assertTrue(originalList.equals(sortedList), "Failed verification sort product by price");
     }
 
     public void verifySortByAscPrice() {

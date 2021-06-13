@@ -6,78 +6,80 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.remote.BrowserType.*;
 
 public class DriverFactory {
-    private static WebDriver driver;
+    private static WebDriver webDriver;
     private static WaitUtils waitUtils;
     private static String currentWorkingDirectory = System.getProperty("user.dir");
 
     protected static WebDriver startChromeDriver() {
-        if (driver == null) {
+        if (webDriver == null) {
             System.setProperty("webdriver.chrome.driver", currentWorkingDirectory + "/drivers/chromedriver.exe");
-            driver = new ChromeDriver();
+            webDriver = new ChromeDriver();
         }
-        return driver;
+        return webDriver;
     }
 
     protected static WebDriver startFireFoxDriver() {
-        if (driver == null) {
+        if (webDriver == null) {
             System.setProperty("webdriver.firefox.driver", currentWorkingDirectory + "/drivers/geckodriver.exe");
-            driver = new FirefoxDriver();
+            webDriver = new FirefoxDriver();
         }
-        return driver;
+        return webDriver;
     }
 
     protected static WebDriver startIEDriver() {
-        if (driver == null) {
-            driver = new InternetExplorerDriver();
+        if (webDriver == null) {
+            webDriver = new InternetExplorerDriver();
         }
-        return driver;
+        return webDriver;
     }
 
     protected static WebDriver startEdgeDriver() {
-        if (driver == null) {
+        if (webDriver == null) {
             System.setProperty("webdriver.edge.driver", currentWorkingDirectory + "/drivers/msedgedriver.exe");
-            driver = new EdgeDriver();
+            webDriver = new EdgeDriver();
         }
-        return driver;
+        return webDriver;
     }
 
     public static WebDriver startBrowser(String browser) throws Exception {
         switch (browser) {
             case CHROME:
-                driver = startChromeDriver();
+                webDriver = startChromeDriver();
                 break;
 
             case FIREFOX:
-                driver = startFireFoxDriver();
+                webDriver = startFireFoxDriver();
                 break;
 
             case IE:
-                driver = startIEDriver();
+                webDriver = startIEDriver();
                 break;
 
             case EDGE:
-                driver = startEdgeDriver();
+                webDriver = startEdgeDriver();
                 break;
 
             default:
                 throw new Exception("Invalid browser type");
         }
-        waitUtils = new WaitUtils(driver);
-        return driver;
+        waitUtils = new WaitUtils(webDriver);
+        return webDriver;
     }
 
     public static void navigateToUrl(String url, long timeout) {
-        driver.get(url);
-        driver.manage().window().maximize();
+        webDriver.get(url);
+        webDriver.manage().window().maximize();
         waitUtils.waitForPageLoad(timeout);
     }
 
     public static void closeBrowser() {
-        driver.quit();
+        if (webDriver != null) {
+            webDriver.quit();
+            webDriver = null;
+        }
     }
 }

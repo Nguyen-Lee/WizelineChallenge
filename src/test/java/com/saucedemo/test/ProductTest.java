@@ -1,10 +1,7 @@
 package com.saucedemo.test;
 
-import com.saucedemo.common.PageUrls;
 import com.saucedemo.common.ProductSortOptions;
 import com.saucedemo.pages.ProductPage;
-import commonLibs.DriverFactory;
-import commonLibs.utils.ConfigUtils;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -13,13 +10,7 @@ public class ProductTest extends BaseTestCase {
 
     @BeforeClass
     public void initData() {
-        DriverFactory.navigateToUrl(PageUrls.PRODUCT_PAGE, ConfigUtils.getDefaultTimeoutSecond());
-        // Login if user doesn't login
-        if (getDriver().getCurrentUrl().equalsIgnoreCase(ConfigUtils.getBaseUrl())) {
-            productPage = login();
-        } else {
-            productPage = new ProductPage(getDriver());
-        }
+        productPage = goToProductPage();
     }
 
     @Test(description = "Sort products by Name (A to Z)")
@@ -28,7 +19,7 @@ public class ProductTest extends BaseTestCase {
                     .verifySortByAZName();
     }
 
-    @Test(description = "Sort products by Name (Z to A)", dependsOnMethods = "sortProductByAscName")
+    @Test(description = "Sort products by Name (Z to A)")
     public void sortProductByDescName() {
         productPage.sortProducts(ProductSortOptions.NAME_DESC)
                     .verifySortByZAName();
@@ -40,7 +31,7 @@ public class ProductTest extends BaseTestCase {
                     .verifySortByAscPrice();
     }
 
-    @Test(description = "Sort products by Price (high to low)", dependsOnMethods = "sortProductByAscPrice")
+    @Test(description = "Sort products by Price (high to low)")
     public void sortProductByDescPrice() {
         productPage.sortProducts(ProductSortOptions.PRICE_DESC)
                     .verifySortByDescPrice();

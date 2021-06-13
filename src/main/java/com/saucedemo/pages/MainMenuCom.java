@@ -24,8 +24,8 @@ public class MainMenuCom extends BasePage {
     @FindBy(id="react-burger-cross-btn")
     WebElement closeMenuButton;
 
-    public MainMenuCom(WebDriver driver) {
-        super(driver);
+    public MainMenuCom(WebDriver webDriver) {
+        super(webDriver);
     }
 
     public MainMenuCom selectItem(WebElement item) {
@@ -45,7 +45,7 @@ public class MainMenuCom extends BasePage {
 
     public LoginPage verifyLogoutSuccessfully() {
         waitUtils.waitForPageLoad(ConfigUtils.getDefaultTimeoutSecond());
-        Assert.assertEquals(driver.getCurrentUrl(), ConfigUtils.getBaseUrl(), "After logout, it doesn't redirect to home page");
-        return new LoginPage(driver);
+        Assert.assertEquals(webDriver.getCurrentUrl(), ConfigUtils.getBaseUrl(), "After logout, it doesn't redirect to home page");
+        return new LoginPage(webDriver);
     }
 }

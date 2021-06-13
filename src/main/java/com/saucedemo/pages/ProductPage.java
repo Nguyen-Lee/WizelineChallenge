@@ -32,9 +32,14 @@ public class ProductPage extends BasePage {
     @FindBy(className = "inventory_item_price")
     List<WebElement> productPrices;
 
-    public ProductPage(WebDriver driver) {
-        super(driver);
-        header = new HeaderCom(driver);
+    String priceBarLocator = "//div[@class='inventory_item_name' and contains(text(), '%s')]//ancestor::div[@class='inventory_item_label']/following-sibling::div[@class='pricebar']";
+    String addToCartButtonLocator = "//button[starts-with(@id, 'add-to-cart-')]";
+    String removeButtonLocator = "//button[starts-with(@id, 'remove-')]";
+
+
+    public ProductPage(WebDriver webDriver) {
+        super(webDriver);
+        header = new HeaderCom(webDriver);
     }
 
     public ProductPage sortProducts(ProductSortOptions sortOption) {
@@ -89,5 +94,17 @@ public class ProductPage extends BasePage {
     public void verifySortByDescPrice() {
         logger.info("Verify sort by Price (High to Low)");
         verifySortByPrice(false);
+    }
+
+    public ProductPage addProductToCart(String productName) {
+        String productPriceBarLocator = String.format(priceBarLocator, productName);
+        WebElement addToCartButton = webDriver.findElement(By.xpath(productPriceBarLocator + addToCartButtonLocator));
+        addToCartButton.click();
+        return this;
+    }
+
+    public ShoppingCartPage verifyProductInCart(String productName) {
+        this.header.goToShoppingCart();
+        return new ShoppingCartPage(webDriver);
     }
 }

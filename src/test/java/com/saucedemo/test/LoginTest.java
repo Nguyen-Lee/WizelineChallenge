@@ -15,7 +15,7 @@ public class LoginTest extends BaseTestCase {
     LoginPage loginPage;
     @BeforeClass
     public void initData() {
-        loginPage = new LoginPage(getDriver());
+        loginPage = new LoginPage(getWebDriver());
     }
 
     @Test(description = "Login failed due to missing username",
@@ -34,7 +34,7 @@ public class LoginTest extends BaseTestCase {
     }
 
     private void pauseBetweenTest() {
-        getDriver().manage().timeouts().implicitlyWait(ConfigUtils.getShortTimeoutSecond(), TimeUnit.SECONDS);
+        getWebDriver().manage().timeouts().implicitlyWait(ConfigUtils.getShortTimeoutSecond(), TimeUnit.SECONDS);
     }
 
     @Test(description = "Login failed due to invalid credentials",

@@ -44,7 +44,7 @@ public class LoginPage extends BasePage {
 
     public ProductPage verifySuccessfulAuthentication(String expectedUrl, long timeout) {
         waitUtils.waitForPageLoad(timeout);
-        Assert.assertEquals(this.driver.getCurrentUrl(), expectedUrl, "Failed authentication");
-        return new ProductPage(driver);
+        Assert.assertEquals(this.webDriver.getCurrentUrl(), expectedUrl, "Failed authentication");
+        return new ProductPage(webDriver);
     }
 }

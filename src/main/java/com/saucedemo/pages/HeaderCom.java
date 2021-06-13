@@ -19,9 +19,9 @@ public class HeaderCom extends BasePage {
     @FindBy(className = "shopping_cart_link")
     WebElement shoppingCartLink;
 
-    public HeaderCom(WebDriver driver) {
-        super(driver);
-        menuCom = new MainMenuCom(driver);
+    public HeaderCom(WebDriver webDriver) {
+        super(webDriver);
+        menuCom = new MainMenuCom(webDriver);
     }
 
     public MainMenuCom showMainMenu() {
@@ -33,6 +33,6 @@ public class HeaderCom extends BasePage {
     public void goToShoppingCart() {
         shoppingCartLink.click();
         waitUtils.waitForPageLoad(ConfigUtils.getDefaultTimeoutSecond());
-        Assert.assertEquals(driver.getCurrentUrl(), PageUrls.SHOPPING_CART_PAGE);
+        Assert.assertEquals(webDriver.getCurrentUrl(), PageUrls.SHOPPING_CART_PAGE);
     }
 }

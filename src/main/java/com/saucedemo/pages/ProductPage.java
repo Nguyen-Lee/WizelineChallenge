@@ -5,10 +5,11 @@ import commonLibs.utils.ConfigUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,10 +23,6 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//select[@data-test='product_sort_container']")
     WebElement sortDropDownList;
 
-    @CacheLookup
-    @FindBy(className = "inventory_list")
-    WebElement inventoryList;
-
     @FindBy(className = "inventory_item_name")
     List<WebElement> productNames;
 
@@ -36,6 +33,11 @@ public class ProductPage extends BasePage {
     String addToCartButtonLocator = "//button[starts-with(@id, 'add-to-cart-')]";
     String removeButtonLocator = "//button[starts-with(@id, 'remove-')]";
 
+    @FindBy(xpath = "//div[@class='pricebar']//button[starts-with(@id, 'add-to-cart-')]")
+    List<WebElement> availableAddToCartButtons;
+
+    @FindBy(xpath = "//div[@class='pricebar']//button[starts-with(@id, 'add-to-cart-')]//ancestor::div[@class='inventory_item_description']//div[@class='inventory_item_name']")
+    List<WebElement> availableItems;
 
     public ProductPage(WebDriver webDriver) {
         super(webDriver);
@@ -110,4 +112,18 @@ public class ProductPage extends BasePage {
         return this;
     }
 
+    public ArrayList<String> getAvailableItems() {
+        ArrayList<String> availableProductNames = new ArrayList<String>();
+        for (WebElement item : availableItems) {
+            availableProductNames.add(item.getText());
+        }
+        return availableProductNames;
+    }
+
+    public ProductPage addAvailableItemsToCart() {
+        for (WebElement addToCartBtn : this.availableAddToCartButtons) {
+            addToCartBtn.click();
+        }
+        return this;
+    }
 }

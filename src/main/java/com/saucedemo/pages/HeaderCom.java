@@ -54,17 +54,8 @@ public class HeaderCom extends BasePage {
         }
     }
 
-    public HeaderCom verifyCartItemsIncreased(int itemCountBefore) {
-        int currentCartItemCount = this.getNumbersOfItemInCart();
-        logger.info(String.format("Numbers of item in cart changed from %s to %s", itemCountBefore, currentCartItemCount));
-        Assert.assertEquals(currentCartItemCount, ++itemCountBefore, "Incorrect numbers of item in cart");
-        return this;
-    }
-
-    public HeaderCom verifyCartItemsDecreased(int itemCountBefore) {
-        int currentCartItemCount = this.getNumbersOfItemInCart();
-        logger.info(String.format("Numbers of item in cart changed from %s to %s", itemCountBefore, currentCartItemCount));
-        Assert.assertEquals(currentCartItemCount, --itemCountBefore, "Incorrect numbers of item in cart");
+    public HeaderCom verifyCartItemCount(int expectedItems) {
+        Assert.assertEquals(this.getNumbersOfItemInCart(), expectedItems, "Incorrect numbers of item in cart");
         return this;
     }
 }

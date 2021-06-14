@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-
 import java.util.List;
 
 public class ShoppingCartPage extends BasePage {
@@ -39,11 +38,13 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public ShoppingCartPage isInCart(String productName) {
+        logger.info(String.format("Verify '%s' in shopping cart", productName));
         Assert.assertEquals(itemRowsInCart(productName), 1, String.format("Cart doesn't have item '%s'", productName));
         return this;
     }
 
     public ShoppingCartPage isNotInCart(String productName) {
+        logger.info(String.format("Verify '%s' not in shopping cart", productName));
         Assert.assertEquals(itemRowsInCart(productName), 0, String.format("Cart still has item '%s'", productName));
         return this;
     }
@@ -58,7 +59,7 @@ public class ShoppingCartPage extends BasePage {
                 WebElement removeButton = item.findElement(By.xpath(removeButtonXpath));
                 removeButton.click();
                 this.isNotInCart(productName)
-                    .headerCom.verifyCartItemsDecreased(cartItemCount);
+                    .headerCom.verifyCartItemCount(--cartItemCount);
                 item = webDriver.findElement(By.className("cart_item_label"));
             }
         } catch (NoSuchElementException ex) {

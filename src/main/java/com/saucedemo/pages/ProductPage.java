@@ -96,15 +96,18 @@ public class ProductPage extends BasePage {
         verifySortByPrice(false);
     }
 
-    public ProductPage addProductToCart(String productName) {
+    public ProductPage addToCart(String productName) {
+        logger.info(String.format("Looking for item '%s' to add to cart", productName));
         String productPriceBarLocator = String.format(priceBarLocator, productName);
         WebElement addToCartButton = webDriver.findElement(By.xpath(productPriceBarLocator + addToCartButtonLocator));
         addToCartButton.click();
         return this;
     }
 
-    public ShoppingCartPage verifyProductInCart(String productName) {
-        this.header.goToShoppingCart();
-        return new ShoppingCartPage(webDriver);
+    public ProductPage canRemoveFromCart(String productName) {
+        String productPriceBarLocator = String.format(priceBarLocator, productName);
+        Assert.assertEquals(webDriver.findElements(By.xpath(productPriceBarLocator + removeButtonLocator)).size(), 1, "Remove action for this product unavailable");
+        return this;
     }
+
 }

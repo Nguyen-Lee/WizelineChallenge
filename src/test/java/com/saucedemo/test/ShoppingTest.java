@@ -1,5 +1,7 @@
 package com.saucedemo.test;
 
+import com.saucedemo.dataProvider.CheckoutProvider;
+import com.saucedemo.models.CartItem;
 import com.saucedemo.pages.ProductPage;
 import com.saucedemo.pages.ShoppingCartPage;
 import org.testng.annotations.*;
@@ -16,7 +18,6 @@ public class ShoppingTest extends BaseTestCase {
         productPage = goToProductPage();
     }
 
-    @BeforeMethod
     public void clearCart() {
         if (!productPage.getHeader().isEmptyCart()) {
             productPage.getHeader().goToShoppingCart()
@@ -25,8 +26,9 @@ public class ShoppingTest extends BaseTestCase {
         }
     }
 
-    @Test
+    @Test(description = "Add all available items to empty cart")
     public void addAvailableItemsToCart() {
+        clearCart();
         ArrayList<String> availableItemNames = productPage.getAvailableItems();
         ShoppingCartPage shoppingCartPage = productPage.addAvailableItemsToCart()
                                                         .getHeader().verifyCartItemCount(availableItemNames.size())
@@ -36,8 +38,10 @@ public class ShoppingTest extends BaseTestCase {
         }
     }
 
-    @Test
+    @Test(description = "Add some specific items to empty cart",
+            dependsOnMethods = "addAvailableItemsToCart")
     public void addNeededItemsToCart() {
+        clearCart();
         String[] neededItems = {"Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)", "Sauce Labs Fleece Jacket"};
         List<String> neededProducts = Arrays.asList(neededItems);
         for (String productName : neededProducts) {
@@ -50,5 +54,20 @@ public class ShoppingTest extends BaseTestCase {
                         .isInCart(productName)
                         .continueShopping();
         }
+    }
+
+    @Test(description = "Place order with cart of previous test",
+            dependsOnMethods = "addNeededItemsToCart",
+            dataProvider="checkoutInfo",
+            dataProviderClass = CheckoutProvider.class)
+    public void checkout(String firstName, String lastName, String postalCode) {
+        ShoppingCartPage shoppingCartPage = productPage.getHeader().goToShoppingCart();
+        List<CartItem> orderItems = shoppingCartPage.getCheckoutItems();
+        shoppingCartPage.checkoutStepOne()
+                        .continueStepTwo(firstName, lastName, postalCode)
+                        .withCartItems(orderItems)
+                        .verifyDisplayedItems()
+                        .placeOrder()
+                        .verifyCheckoutSuccessful();
     }
 }

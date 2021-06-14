@@ -1,5 +1,7 @@
 package com.saucedemo.pages;
 
+import com.saucedemo.common.PageUrls;
+import com.saucedemo.models.CartItem;
 import commonLibs.utils.ConfigUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -8,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCartPage extends BasePage {
@@ -17,8 +21,12 @@ public class ShoppingCartPage extends BasePage {
     @FindBy(id="continue-shopping")
     WebElement continueShoppingButton;
 
-    @FindBy(className = "cart_item_label")
-    List<WebElement> items;
+    @CacheLookup
+    @FindBy(id="checkout")
+    WebElement checkoutButton;
+
+    @FindBy(className = "cart_item")
+    List<WebElement> cartItems;
 
     String itemLocator = "//div[@class='inventory_item_name' and contains(text(), '%s')]";
 
@@ -30,6 +38,7 @@ public class ShoppingCartPage extends BasePage {
     public ProductPage continueShopping() {
         continueShoppingButton.click();
         waitUtils.waitForPageLoad(ConfigUtils.getShortTimeoutSecond());
+        Assert.assertEquals(webDriver.getCurrentUrl(), PageUrls.PRODUCT_PAGE);
         return new ProductPage(webDriver);
     }
 
@@ -70,5 +79,24 @@ public class ShoppingCartPage extends BasePage {
         }
         Assert.assertTrue(this.headerCom.isEmptyCart());
         return this;
+    }
+
+    public List<CartItem> getCheckoutItems() {
+        ArrayList<CartItem> orderItems = new ArrayList<>();
+        for (WebElement cartItem : cartItems) {
+            CartItem item = new CartItem()
+                            .withName(cartItem.findElement(By.className("inventory_item_name")).getText())
+                            .withQuantity(Integer.parseInt(cartItem.findElement(By.className("cart_quantity")).getText()))
+                            .withPrice(Float.parseFloat(cartItem.findElement(By.className("inventory_item_price")).getText().replace("$", "")));
+            orderItems.add(item);
+        }
+        return orderItems;
+    }
+
+    public CheckoutStepOnePage checkoutStepOne() {
+        checkoutButton.click();
+        waitUtils.waitForPageLoad(ConfigUtils.getDefaultTimeoutSecond());
+        Assert.assertEquals(webDriver.getCurrentUrl(), PageUrls.CHECKOUT_STEP_ONE_PAGE);
+        return new CheckoutStepOnePage(webDriver);
     }
 }

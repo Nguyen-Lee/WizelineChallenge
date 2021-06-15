@@ -38,7 +38,7 @@ public class BaseTestCase {
         return productPage;
     }
 
-   //@AfterTest(alwaysRun = true)
+   @AfterTest(alwaysRun = true)
     public void tearDown() {
         DriverFactory.closeBrowser();
     }

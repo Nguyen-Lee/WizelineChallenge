@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 public class ProductPage extends BasePage {
     HeaderCom header;
+
     public HeaderCom getHeader() {
         return header;
     }
@@ -53,14 +54,14 @@ public class ProductPage extends BasePage {
 
     private void verifySortByName(boolean isAZ) {
         List<String> originalList = productNames.stream()
-                                    .map(s -> s.getText())
-                                    .collect(Collectors.toList());
+                .map(s -> s.getText())
+                .collect(Collectors.toList());
         logger.info("Original list: " + originalList);
 
         List<String> sortedList;
         sortedList = isAZ
-                        ? originalList.stream().sorted().collect(Collectors.toList())
-                        : originalList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+                ? originalList.stream().sorted().collect(Collectors.toList())
+                : originalList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         logger.info("Sorted list: " + sortedList);
         Assert.assertTrue(originalList.equals(sortedList), "Failed verification sort product by name");
     }
@@ -77,13 +78,13 @@ public class ProductPage extends BasePage {
 
     private void verifySortByPrice(boolean isAsc) {
         List<Double> originalList = productPrices.stream()
-                                    .map(s -> Double.parseDouble(s.getText().replace("$", "")))
-                                    .collect(Collectors.toList());
+                .map(s -> Double.parseDouble(s.getText().replace("$", "")))
+                .collect(Collectors.toList());
         logger.info("Original list: " + originalList);
         List<Double> sortedList;
         sortedList = isAsc
-                        ? originalList.stream().sorted().collect(Collectors.toList())
-                        : originalList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+                ? originalList.stream().sorted().collect(Collectors.toList())
+                : originalList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         logger.info("Sorted list: " + sortedList);
         Assert.assertTrue(originalList.equals(sortedList), "Failed verification sort product by price");
     }

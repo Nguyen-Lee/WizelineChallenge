@@ -7,6 +7,7 @@ public class CheckoutProvider {
     private Object[][] checkoutInfo() {
         return new Object[][]{
                 {"Sofia", "Lee", "70000"}
+
         };
     }
 }

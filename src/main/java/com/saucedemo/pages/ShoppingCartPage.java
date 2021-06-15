@@ -28,7 +28,8 @@ public class ShoppingCartPage extends BasePage {
     @FindBy(className = "cart_item")
     List<WebElement> cartItems;
 
-    String itemLocator = "//div[@class='inventory_item_name' and contains(text(), '%s')]";
+    String inventoryClassName = "inventory_item_name";
+    String itemLocator = "//div[@class='%s' and contains(text(), '%s')]";
 
     public ShoppingCartPage(WebDriver webDriver) {
         super(webDriver);
@@ -43,7 +44,7 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public int itemRowsInCart(String productName) {
-        return webDriver.findElements(By.xpath(String.format(itemLocator, productName))).size();
+        return webDriver.findElements(By.xpath(String.format(itemLocator, inventoryClassName, productName))).size();
     }
 
     public ShoppingCartPage isInCart(String productName) {
@@ -63,7 +64,7 @@ public class ShoppingCartPage extends BasePage {
             WebElement item = webDriver.findElement(By.className("cart_item_label"));
             while (item instanceof WebElement) {
                 int cartItemCount = this.headerCom.getNumbersOfItemInCart();
-                String productName = item.findElement(By.className("inventory_item_name")).getText();
+                String productName = item.findElement(By.className(inventoryClassName)).getText();
                 String removeButtonXpath = "div[@class='item_pricebar']/button[starts-with(@id, 'remove-')]";
                 WebElement removeButton = item.findElement(By.xpath(removeButtonXpath));
                 removeButton.click();
@@ -85,7 +86,7 @@ public class ShoppingCartPage extends BasePage {
         ArrayList<CartItem> orderItems = new ArrayList<>();
         for (WebElement cartItem : cartItems) {
             CartItem item = new CartItem()
-                            .withName(cartItem.findElement(By.className("inventory_item_name")).getText())
+                            .withName(cartItem.findElement(By.className(inventoryClassName)).getText())
                             .withQuantity(Integer.parseInt(cartItem.findElement(By.className("cart_quantity")).getText()))
                             .withPrice(Float.parseFloat(cartItem.findElement(By.className("inventory_item_price")).getText().replace("$", "")));
             orderItems.add(item);

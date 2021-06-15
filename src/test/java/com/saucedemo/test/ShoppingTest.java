@@ -5,7 +5,6 @@ import com.saucedemo.models.CartItem;
 import com.saucedemo.pages.ProductPage;
 import com.saucedemo.pages.ShoppingCartPage;
 import org.testng.annotations.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,7 +59,11 @@ public class ShoppingTest extends BaseTestCase {
             dependsOnMethods = "addNeededItemsToCart",
             dataProvider="checkoutInfo",
             dataProviderClass = CheckoutProvider.class)
-    public void checkout(String firstName, String lastName, String postalCode) {
+    public void checkout(String firstName, String lastName, String postalCode) throws Exception {
+        if (productPage.getHeader().isEmptyCart()) {
+            throw new Exception("Don't run test with empty cart");
+        }
+        
         ShoppingCartPage shoppingCartPage = productPage.getHeader().goToShoppingCart();
         List<CartItem> orderItems = shoppingCartPage.getCheckoutItems();
         shoppingCartPage.checkoutStepOne()

@@ -7,16 +7,18 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.io.File;
+
 import static org.openqa.selenium.remote.BrowserType.*;
 
 public class DriverFactory {
     private static WebDriver webDriver;
     private static WaitUtils waitUtils;
-    private static String currentWorkingDirectory = System.getProperty("user.dir");
+    private static String driverDirectory = System.getProperty("user.dir").concat(File.separator + "drivers" + File.separator);
 
     protected static WebDriver startChromeDriver() {
         if (webDriver == null) {
-            System.setProperty("webdriver.chrome.driver", currentWorkingDirectory + "/drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", driverDirectory + "chromedriver.exe");
             webDriver = new ChromeDriver();
         }
         return webDriver;
@@ -24,7 +26,7 @@ public class DriverFactory {
 
     protected static WebDriver startFireFoxDriver() {
         if (webDriver == null) {
-            System.setProperty("webdriver.firefox.driver", currentWorkingDirectory + "/drivers/geckodriver.exe");
+            System.setProperty("webdriver.firefox.driver", driverDirectory + "geckodriver.exe");
             webDriver = new FirefoxDriver();
         }
         return webDriver;
@@ -39,7 +41,7 @@ public class DriverFactory {
 
     protected static WebDriver startEdgeDriver() {
         if (webDriver == null) {
-            System.setProperty("webdriver.edge.driver", currentWorkingDirectory + "/drivers/msedgedriver.exe");
+            System.setProperty("webdriver.edge.driver", driverDirectory + "msedgedriver.exe");
             webDriver = new EdgeDriver();
         }
         return webDriver;

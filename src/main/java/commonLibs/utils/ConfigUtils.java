@@ -33,4 +33,16 @@ public class ConfigUtils {
     public static long getShortTimeoutSecond() {
         return Long.parseLong(dotenv.get(CommonParams.SHORT_TIMEOUT_SECONDS.name()));
     }
+
+    public static String getSparkReportPath() {
+        return dotenv.get(CommonParams.SPARK_REPORT_PATH.name());
+    }
+
+    public static String getReportDocumentTitle() {
+        return dotenv.get(CommonParams.REPORT_DOCUMENT_TITLE.name());
+    }
+
+    public static String getReportName() {
+        return dotenv.get(CommonParams.REPORT_NAME.name());
+    }
 }

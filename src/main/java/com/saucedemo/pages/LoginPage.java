@@ -30,7 +30,6 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage login(String username, String password) {
-        logger.info(String.format("Login with username %s, password: %s", username, password));
         ElementControl.inputText(usernameEle, username);
         ElementControl.inputText(passwordEle, password);
         loginButtonEle.click();

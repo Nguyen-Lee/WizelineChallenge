@@ -6,6 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Reporter;
 
 import java.io.File;
 
@@ -34,7 +37,11 @@ public class DriverFactory {
 
     protected static WebDriver startIEDriver() {
         if (webDriver == null) {
-            webDriver = new InternetExplorerDriver();
+            System.setProperty("webdriver.ie.driver", driverDirectory + "IEDriverServer.exe");
+            InternetExplorerOptions ieOption = new InternetExplorerOptions();
+            ieOption.ignoreZoomSettings();
+            ieOption.introduceFlakinessByIgnoringSecurityDomains();
+            webDriver = new InternetExplorerDriver(ieOption);
         }
         return webDriver;
     }

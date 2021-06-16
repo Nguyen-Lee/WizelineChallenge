@@ -8,6 +8,7 @@ import com.saucedemo.pages.ProductPage;
 import commonLibs.utils.ConfigUtils;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
 public class LoginTest extends BaseTestCase {
@@ -53,7 +54,7 @@ public class LoginTest extends BaseTestCase {
     @Test(description = "Login with valid credentials",
             dataProviderClass = AuthenticateProvider.class,
             dataProvider = "validCredentials")
-    public void validCredentialLogin(String username, String password) {
+    public void validCredentialLogin(String username, String password) throws InterruptedException {
         startTest("LoginPassed", "Login with valid credentials");
         test.info(String.format("Test data: '%s' / '%s'", username, password) );
         ProductPage productPage = loginPage.login(username, password)

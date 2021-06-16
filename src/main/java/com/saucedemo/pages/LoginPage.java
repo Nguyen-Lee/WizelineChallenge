@@ -21,12 +21,11 @@ public class LoginPage extends BasePage {
     @FindBy(id="login-button")
     private WebElement loginButtonEle;
 
-    @CacheLookup
     @FindBy(xpath = "//h3[@data-test='error']")
     private WebElement errorMessage;
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage(WebDriver webDriver) {
+        super(webDriver);
     }
 
     public LoginPage login(String username, String password) {

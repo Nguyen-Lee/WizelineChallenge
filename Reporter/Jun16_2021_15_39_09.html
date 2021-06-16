@@ -1,0 +1,1610 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Front End Testing Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c952cc003431b643d7a73337421ff42b75bac784/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Wizeline Automation Challenge - Author: Sofia Nguyen Lee</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jun 16, 2021 03:39:08 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:15 PM</span> / <span>00:00:00:687</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:15</span>
+<span class='badge badge-danger'>06.16.2021 15:39:16</span>
+<span class='badge badge-default'>00:00:00:687</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:15 PM</td>
+        <td>
+          Test data: 'admin' / 'password'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:16 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:16 PM</td>
+        <td>
+          Run on: firefox, Execution time: 687 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:16 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:16 PM</span> / <span>00:00:00:920</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:16</span>
+<span class='badge badge-danger'>06.16.2021 15:39:17</span>
+<span class='badge badge-default'>00:00:00:920</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:16 PM</td>
+        <td>
+          Test data: 'admin' / 'admin'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:17 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:17 PM</td>
+        <td>
+          Run on: firefox, Execution time: 920 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:17 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:17 PM</span> / <span>00:00:00:860</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:17</span>
+<span class='badge badge-danger'>06.16.2021 15:39:17</span>
+<span class='badge badge-default'>00:00:00:860</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:17 PM</td>
+        <td>
+          Test data: '" or ""="' / '" or ""="'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:17 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:17 PM</td>
+        <td>
+          Run on: firefox, Execution time: 860 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:17 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:17 PM</span> / <span>00:00:01:203</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:17</span>
+<span class='badge badge-danger'>06.16.2021 15:39:19</span>
+<span class='badge badge-default'>00:00:01:203</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:17 PM</td>
+        <td>
+          Test data: 'standard_user' / '' or '1'='1'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:19 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:19 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1203 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:19 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:19 PM</span> / <span>00:00:01:327</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:19</span>
+<span class='badge badge-danger'>06.16.2021 15:39:20</span>
+<span class='badge badge-default'>00:00:01:327</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:19 PM</td>
+        <td>
+          Test data: 'standard_user' / '' or 1='1'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:20 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:20 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1327 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:20 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:20 PM</span> / <span>00:00:01:244</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:20</span>
+<span class='badge badge-danger'>06.16.2021 15:39:21</span>
+<span class='badge badge-default'>00:00:01:244</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:20 PM</td>
+        <td>
+          Test data: 'standard_user' / '1' or 1=1 -- -'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:21 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:21 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1244 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:21 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:21 PM</span> / <span>00:00:01:451</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:21</span>
+<span class='badge badge-danger'>06.16.2021 15:39:23</span>
+<span class='badge badge-default'>00:00:01:451</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:21 PM</td>
+        <td>
+          Test data: 'standard_user' / ''' OR '1'='1''
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:23 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:23 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1451 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:23 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:23 PM</span> / <span>00:00:01:394</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:23</span>
+<span class='badge badge-danger'>06.16.2021 15:39:24</span>
+<span class='badge badge-default'>00:00:01:394</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:23 PM</td>
+        <td>
+          Test data: '' or ' 1=1' / '' or ' 1=1'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:24 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:24 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1394 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:24 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_InvalidCredential</p>
+            <p class="text-sm">
+              <span>15:39:24 PM</span> / <span>00:00:01:192</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_InvalidCredential</h5>
+<span class='badge badge-success'>06.16.2021 15:39:24</span>
+<span class='badge badge-danger'>06.16.2021 15:39:25</span>
+<span class='badge badge-default'>00:00:01:192</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to invalid username/ password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:24 PM</td>
+        <td>
+          Test data: '1' or 1=1 -- -' / 'blah'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:25 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.invalidCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:25 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1192 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:25 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_LockedAccount</p>
+            <p class="text-sm">
+              <span>15:39:25 PM</span> / <span>00:00:01:103</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_LockedAccount</h5>
+<span class='badge badge-success'>06.16.2021 15:39:25</span>
+<span class='badge badge-danger'>06.16.2021 15:39:26</span>
+<span class='badge badge-default'>00:00:01:103</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to locked account</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:25 PM</td>
+        <td>
+          Test data: 'locked_out_user' / 'secret_sauce'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:26 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.lockedCredentialFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:26 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1103 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:26 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_MissingPassword</p>
+            <p class="text-sm">
+              <span>15:39:26 PM</span> / <span>00:00:01:418</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_MissingPassword</h5>
+<span class='badge badge-success'>06.16.2021 15:39:26</span>
+<span class='badge badge-danger'>06.16.2021 15:39:28</span>
+<span class='badge badge-default'>00:00:01:418</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to missing password</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:26 PM</td>
+        <td>
+          Test data: 'username' / ''
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:28 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.missingPasswordFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:28 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1418 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:28 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_MissingUsername</p>
+            <p class="text-sm">
+              <span>15:39:28 PM</span> / <span>00:00:00:641</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_MissingUsername</h5>
+<span class='badge badge-success'>06.16.2021 15:39:28</span>
+<span class='badge badge-danger'>06.16.2021 15:39:28</span>
+<span class='badge badge-default'>00:00:00:641</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to missing username</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:28 PM</td>
+        <td>
+          Test data: '' / ''
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:28 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.missingUsernameFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:28 PM</td>
+        <td>
+          Run on: firefox, Execution time: 640 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:28 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginFailed_MissingUsername</p>
+            <p class="text-sm">
+              <span>15:39:28 PM</span> / <span>00:00:00:347</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginFailed_MissingUsername</h5>
+<span class='badge badge-success'>06.16.2021 15:39:28</span>
+<span class='badge badge-danger'>06.16.2021 15:39:29</span>
+<span class='badge badge-default'>00:00:00:347</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+</div>
+<div class="m-t-10 m-l-5">Login failed due to missing username</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:28 PM</td>
+        <td>
+          Test data: '' / 'password'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:29 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.missingUsernameFailsLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:29 PM</td>
+        <td>
+          Run on: firefox, Execution time: 347 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:29 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginPassed</p>
+            <p class="text-sm">
+              <span>15:39:29 PM</span> / <span>00:00:01:372</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginPassed</h5>
+<span class='badge badge-success'>06.16.2021 15:39:29</span>
+<span class='badge badge-danger'>06.16.2021 15:39:30</span>
+<span class='badge badge-default'>00:00:01:372</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+</div>
+<div class="m-t-10 m-l-5">Login with valid credentials</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:29 PM</td>
+        <td>
+          Test data: 'standard_user' / 'secret_sauce'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:30 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.validCredentialLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:30 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1372 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:30 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginPassed</p>
+            <p class="text-sm">
+              <span>15:39:30 PM</span> / <span>00:00:01:040</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginPassed</h5>
+<span class='badge badge-success'>06.16.2021 15:39:30</span>
+<span class='badge badge-danger'>06.16.2021 15:39:31</span>
+<span class='badge badge-default'>00:00:01:040</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+</div>
+<div class="m-t-10 m-l-5">Login with valid credentials</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:30 PM</td>
+        <td>
+          Test data: 'problem_user' / 'secret_sauce'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:31 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.validCredentialLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:31 PM</td>
+        <td>
+          Run on: firefox, Execution time: 1039 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:31 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LoginPassed</p>
+            <p class="text-sm">
+              <span>15:39:31 PM</span> / <span>00:00:06:093</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LoginPassed</h5>
+<span class='badge badge-success'>06.16.2021 15:39:31</span>
+<span class='badge badge-danger'>06.16.2021 15:39:37</span>
+<span class='badge badge-default'>00:00:06:093</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+</div>
+<div class="m-t-10 m-l-5">Login with valid credentials</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:31 PM</td>
+        <td>
+          Test data: 'performance_glitch_user' / 'secret_sauce'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:37 PM</td>
+        <td>
+          Method: com.saucedemo.test.LoginTest.validCredentialLogin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:37 PM</td>
+        <td>
+          Run on: firefox, Execution time: 6093 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:37 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ProductSort_ByName(A-Z)</p>
+            <p class="text-sm">
+              <span>15:39:38 PM</span> / <span>00:00:00:162</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">ProductSort_ByName(A-Z)</h5>
+<span class='badge badge-success'>06.16.2021 15:39:38</span>
+<span class='badge badge-danger'>06.16.2021 15:39:38</span>
+<span class='badge badge-default'>00:00:00:162</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+</div>
+<div class="m-t-10 m-l-5">Sort products by Name (A to Z)</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:38 PM</td>
+        <td>
+          Method: com.saucedemo.test.ProductTest.sortProductByAscName
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:38 PM</td>
+        <td>
+          Run on: firefox, Execution time: 162 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:38 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ProductSort_ByPrice(Low-High)</p>
+            <p class="text-sm">
+              <span>15:39:38 PM</span> / <span>00:00:00:403</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">ProductSort_ByPrice(Low-High)</h5>
+<span class='badge badge-success'>06.16.2021 15:39:38</span>
+<span class='badge badge-danger'>06.16.2021 15:39:39</span>
+<span class='badge badge-default'>00:00:00:403</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+</div>
+<div class="m-t-10 m-l-5">Sort products by Price (low to high)</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:39 PM</td>
+        <td>
+          Method: com.saucedemo.test.ProductTest.sortProductByAscPrice
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:39 PM</td>
+        <td>
+          Run on: firefox, Execution time: 403 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:39 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ProductSort_ByName(Z-A)</p>
+            <p class="text-sm">
+              <span>15:39:39 PM</span> / <span>00:00:00:397</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">ProductSort_ByName(Z-A)</h5>
+<span class='badge badge-success'>06.16.2021 15:39:39</span>
+<span class='badge badge-danger'>06.16.2021 15:39:39</span>
+<span class='badge badge-default'>00:00:00:397</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+</div>
+<div class="m-t-10 m-l-5">Sort products by Name (Z to A)</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:39 PM</td>
+        <td>
+          Method: com.saucedemo.test.ProductTest.sortProductByDescName
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:39 PM</td>
+        <td>
+          Run on: firefox, Execution time: 397 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:39 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ProductSort_ByPrice(High-Low)</p>
+            <p class="text-sm">
+              <span>15:39:39 PM</span> / <span>00:00:00:393</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">ProductSort_ByPrice(High-Low)</h5>
+<span class='badge badge-success'>06.16.2021 15:39:39</span>
+<span class='badge badge-danger'>06.16.2021 15:39:40</span>
+<span class='badge badge-default'>00:00:00:393</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+</div>
+<div class="m-t-10 m-l-5">Sort products by Price (high to low)</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:40 PM</td>
+        <td>
+          Method: com.saucedemo.test.ProductTest.sortProductByDescPrice
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:40 PM</td>
+        <td>
+          Run on: firefox, Execution time: 378 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:40 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">AddToCart_AvailableItems</p>
+            <p class="text-sm">
+              <span>15:39:40 PM</span> / <span>00:00:06:939</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">AddToCart_AvailableItems</h5>
+<span class='badge badge-success'>06.16.2021 15:39:40</span>
+<span class='badge badge-danger'>06.16.2021 15:39:47</span>
+<span class='badge badge-default'>00:00:06:939</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+</div>
+<div class="m-t-10 m-l-5">Add all available items to cart</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:47 PM</td>
+        <td>
+          Available items: [Sauce Labs Backpack, Sauce Labs Bike Light, Sauce Labs Bolt T-Shirt, Sauce Labs Fleece Jacket, Sauce Labs Onesie, Test.allTheThings() T-Shirt (Red)]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:47 PM</td>
+        <td>
+          Method: com.saucedemo.test.ShoppingTest.addAvailableItemsToCart
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:39:47 PM</td>
+        <td>
+          Run on: firefox, Execution time: 6939 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:39:47 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">AddToCart_SpecificItems</p>
+            <p class="text-sm">
+              <span>15:39:47 PM</span> / <span>00:00:53:888</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">AddToCart_SpecificItems</h5>
+<span class='badge badge-success'>06.16.2021 15:39:47</span>
+<span class='badge badge-danger'>06.16.2021 15:40:41</span>
+<span class='badge badge-default'>00:00:53:888</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+</div>
+<div class="m-t-10 m-l-5">Add some specific items to cart</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:35 PM</td>
+        <td>
+          Needed items: [Sauce Labs Onesie]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:41 PM</td>
+        <td>
+          Method: com.saucedemo.test.ShoppingTest.addNeededItemsToCart
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:41 PM</td>
+        <td>
+          Run on: firefox, Execution time: 53888 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:41 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">AddToCart_SpecificItems</p>
+            <p class="text-sm">
+              <span>15:40:41 PM</span> / <span>00:00:28:826</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">AddToCart_SpecificItems</h5>
+<span class='badge badge-success'>06.16.2021 15:40:41</span>
+<span class='badge badge-danger'>06.16.2021 15:41:10</span>
+<span class='badge badge-default'>00:00:28:826</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+</div>
+<div class="m-t-10 m-l-5">Add some specific items to cart</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:41:02 PM</td>
+        <td>
+          Needed items: [Test.allTheThings() T-Shirt (Red), Sauce Labs Fleece Jacket, Sauce Labs Onesie]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:41:10 PM</td>
+        <td>
+          Method: com.saucedemo.test.ShoppingTest.addNeededItemsToCart
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:41:10 PM</td>
+        <td>
+          Run on: firefox, Execution time: 28826 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:41:10 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Checkout</p>
+            <p class="text-sm">
+              <span>15:41:10 PM</span> / <span>00:00:06:824</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Checkout</h5>
+<span class='badge badge-success'>06.16.2021 15:41:10</span>
+<span class='badge badge-danger'>06.16.2021 15:41:16</span>
+<span class='badge badge-default'>00:00:06:824</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+</div>
+<div class="m-t-10 m-l-5">Place an order</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:41:16 PM</td>
+        <td>
+          Method: com.saucedemo.test.ShoppingTest.checkout
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:41:16 PM</td>
+        <td>
+          Run on: firefox, Execution time: 6824 ms
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:41:16 PM</td>
+        <td>
+          <span class='badge white-text green'>PASSED</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jun 16, 2021 03:39:08 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jun 16, 2021 03:41:16 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>24</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>24</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='26%'><b>24</b> events passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> events failed,
+<b data-tooltip='%'>67</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"LoginFailed_InvalidCredential":0.687,"LoginFailed_InvalidCredential":0.92,"LoginFailed_InvalidCredential":0.86,"LoginFailed_InvalidCredential":1.203,"LoginFailed_InvalidCredential":1.327,"LoginFailed_InvalidCredential":1.244,"LoginFailed_InvalidCredential":1.451,"LoginFailed_InvalidCredential":1.394,"LoginFailed_InvalidCredential":1.192,"LoginFailed_LockedAccount":1.103,"LoginFailed_MissingPassword":1.418,"LoginFailed_MissingUsername":0.641,"LoginFailed_MissingUsername":0.347,"LoginPassed":1.372,"LoginPassed":1.04,"LoginPassed":6.093,"ProductSort_ByName(A-Z)":0.162,"ProductSort_ByPrice(Low-High)":0.403,"ProductSort_ByName(Z-A)":0.397,"ProductSort_ByPrice(High-Low)":0.393,"AddToCart_AvailableItems":6.939,"AddToCart_SpecificItems":53.888,"AddToCart_SpecificItems":28.826,"Checkout":6.824
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 24,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 24,
+failEvents: 0,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 67
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

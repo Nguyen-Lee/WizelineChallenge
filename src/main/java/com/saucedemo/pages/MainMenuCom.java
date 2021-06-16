@@ -7,6 +7,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.util.concurrent.TimeUnit;
+
 public class MainMenuCom extends BasePage {
     @CacheLookup
     @FindBy(className="bm-menu-wrap")

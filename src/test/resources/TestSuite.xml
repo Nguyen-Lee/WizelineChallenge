@@ -3,8 +3,10 @@
 
 <suite name="Saucedemo Suite">
     <test name="UI Testing">
-        <packages>
-            <package name="com.saucedemo.test.*"></package>
-        </packages>
+        <classes>
+            <class name="com.saucedemo.test.LoginTest"></class>
+            <class name="com.saucedemo.test.ProductTest"></class>
+            <class name="com.saucedemo.test.ShoppingTest"></class>
+        </classes>
     </test>
 </suite>
